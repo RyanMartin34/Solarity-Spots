@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html" class="header-logo">Solarity</a>
+      <button class="nav-open-btn">&#9776;</button>
+
+      <nav class="nav-container">
+        <div class="nav-links">
+          <a href="./index.html" class="secondary-btn">Home</a>
+          <a href="#" class="logout-btn primary-btn">Log Out</a>
+          <a href="./login.html" class="login-btn primary-btn">Log In</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero-content">
+      <h1>Create your account</h1>
+      <p>Fill in the form below to create your account</p>
+
+      <form class="signup-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="John Doe" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="me@example.com" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+
+        <button>Create Account</button>
+      </form>
+      <p>Already have an account? <a href="./login.html">Log In</a></p>
+    </section>
+
+    <script type="module" src="./JS/headerNav.js"></script>
+  </body>
+</html>
