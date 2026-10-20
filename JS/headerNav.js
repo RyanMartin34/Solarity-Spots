@@ -4,7 +4,7 @@ const loginBtn = document.querySelector(".login-btn");
 const logoutBtn = document.querySelector(".logout-btn");
 const signupBtn = document.querySelector(".signup-btn");
 
-const isLoggedIn = true;
+const isLoggedIn = false;
 
 navOpenBtn.addEventListener("click", () => {
   navContainer.classList.toggle("open");
