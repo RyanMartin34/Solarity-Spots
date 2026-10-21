@@ -1,0 +1,27 @@
+{
+  "name": "solarity-spots",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/RyanMartin34/Solarity-Spots#readme",
+  "bugs": {
+    "url": "https://github.com/RyanMartin34/Solarity-Spots/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanMartin34/Solarity-Spots.git"
+  },
+  "license": "ISC",
+  "author": "Ryan Martin",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
