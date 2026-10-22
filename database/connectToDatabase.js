@@ -7,7 +7,5 @@ export async function connectToDatabase() {
     driver: sqlite3.Database,
   });
 
-  console.log("Database connected");
-
   return db;
 }
