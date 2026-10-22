@@ -1,4 +1,5 @@
 const form = document.querySelector(".signup-form");
+const errorMessage = document.querySelector(".error-message");
 
 form.addEventListener("submit", addUserFrontEnd);
 
@@ -22,8 +23,12 @@ async function addUserFrontEnd(event) {
 
     const data = await response.json();
     form.reset();
-    console.log("Frontend: User Credentials Sent");
-    console.log(data.message);
+    if (response.status === 201) {
+      window.location.href = "index.html";
+    } else {
+      errorMessage.textContent = data.message;
+      errorMessage.classList.add("error");
+    }
   } catch (error) {
     console.log(error);
   }
