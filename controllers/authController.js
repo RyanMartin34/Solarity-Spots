@@ -38,14 +38,31 @@ export async function addUser(req, res) {
     const db = await connectToDatabase();
     const hashedPassword = await argon2.hash(password);
 
-    await db.run("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", [
-      name,
-      email,
-      hashedPassword,
-    ]);
+    const addNewUser = await db.run(
+      "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
+      [name, email, hashedPassword],
+    );
 
-    return res.status(201).json({
-      message: "User created successfully",
+    req.session.regenerate((err) => {
+      if (err) {
+        return res.status(500).json({
+          message: "Failed to create session",
+        });
+      }
+
+      req.session.userId = addNewUser.lastID;
+
+      req.session.save((err) => {
+        if (err) {
+          return res.status(500).json({
+            message: "Failed to save session",
+          });
+        }
+
+        return res.status(201).json({
+          message: "User created successfully",
+        });
+      });
     });
   } catch (error) {
     if (

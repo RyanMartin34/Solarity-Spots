@@ -24,7 +24,7 @@ async function addUserFrontEnd(event) {
     const data = await response.json();
     form.reset();
     if (response.status === 201) {
-      window.location.href = "index.html";
+      window.location.href = "dashboard.html";
     } else {
       errorMessage.textContent = data.message;
       errorMessage.classList.add("error");

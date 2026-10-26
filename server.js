@@ -1,7 +1,17 @@
 import express from "express";
+import session from "express-session";
 import { authRouter } from "./routers/authRouter.js";
+import "dotenv/config";
 
 const server = express();
+
+server.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
 
 server.use(express.json());
 
